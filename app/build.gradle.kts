@@ -97,7 +97,10 @@ android {
 }
 
 dependencies {
-    implementation(libs.simple.mobile.tools.commons)
+    implementation(libs.simple.mobile.tools.commons) {
+        exclude(group = "com.github.duolingo", module = "rtl-viewpager")
+    }
+    implementation(project(":rtl-viewpager"))
     implementation(libs.androidx.multidex)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.swiperefreshlayout)

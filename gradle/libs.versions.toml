@@ -42,6 +42,7 @@ room = [
     "androidx-room-runtime",
 ]
 [plugins]
+androidLibrary = { id = "com.android.library", version.ref = "gradlePlugins-agp" }
 android = { id = "com.android.application", version.ref = "gradlePlugins-agp" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

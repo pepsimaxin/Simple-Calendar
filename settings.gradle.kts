@@ -14,3 +14,6 @@ dependencyResolutionManagement {
     }
 }
 include(":app")
+
+include(":rtl-viewpager")
+project(":rtl-viewpager").projectDir = file("third_party/rtl-viewpager")

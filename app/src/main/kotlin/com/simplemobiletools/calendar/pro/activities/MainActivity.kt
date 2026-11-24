@@ -131,11 +131,13 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             refreshCalDAVCalendars(true)
         }
 
-        checkIsViewIntent()
-
         if (!checkIsOpenIntent()) {
             updateViewPager()
         }
+
+        // Apply external calendar dates after the initial pager is ready. Otherwise
+        // the default pager above resets a requested date back to today on cold start.
+        checkIsViewIntent()
 
         checkAppOnSDCard()
 

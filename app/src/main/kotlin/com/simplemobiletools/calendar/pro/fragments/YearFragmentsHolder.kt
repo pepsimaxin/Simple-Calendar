@@ -101,8 +101,8 @@ class YearFragmentsHolder : MyFragmentHolder(), NavigationListener {
         }
 
         val datePicker = getDatePickerView()
-        datePicker.findViewById<View>(Resources.getSystem().getIdentifier("day", "id", "android")).beGone()
-        datePicker.findViewById<View>(Resources.getSystem().getIdentifier("month", "id", "android")).beGone()
+        datePicker.findViewById<View>(Resources.getSystem().getIdentifier("day", "id", "android"))?.beGone()
+        datePicker.findViewById<View>(Resources.getSystem().getIdentifier("month", "id", "android"))?.beGone()
 
         val dateTime = DateTime(Formatter.getDateTimeFromCode("${currentYear}0523").toString())
         datePicker.init(dateTime.year, dateTime.monthOfYear - 1, 1, null)

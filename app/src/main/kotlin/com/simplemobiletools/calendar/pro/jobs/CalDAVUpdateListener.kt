@@ -37,14 +37,14 @@ class CalDAVUpdateListener : JobService() {
     }
 
     fun isScheduled(context: Context): Boolean {
-        val jobScheduler = context.getSystemService(JobScheduler::class.java)
+        val jobScheduler = context.getSystemService(JobScheduler::class.java) ?: return false
         val jobs = jobScheduler.allPendingJobs
         return jobs.any { it.id == CALDAV_EVENT_CONTENT_JOB }
     }
 
     fun cancelJob(context: Context) {
         val js = context.getSystemService(JobScheduler::class.java)
-        js.cancel(CALDAV_EVENT_CONTENT_JOB)
+        js?.cancel(CALDAV_EVENT_CONTENT_JOB)
     }
 
     override fun onStartJob(params: JobParameters): Boolean {

@@ -108,7 +108,7 @@ class MonthDayFragmentsHolder : MyFragmentHolder(), NavigationListener {
         }
 
         val datePicker = getDatePickerView()
-        datePicker.findViewById<View>(Resources.getSystem().getIdentifier("day", "id", "android")).beGone()
+        datePicker.findViewById<View>(Resources.getSystem().getIdentifier("day", "id", "android"))?.beGone()
 
         val dateTime = getCurrentDate()!!
         datePicker.init(dateTime.year, dateTime.monthOfYear - 1, 1, null)
